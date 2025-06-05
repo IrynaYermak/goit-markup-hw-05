@@ -479,10 +479,6 @@ ol {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .subscribe-btn-container {
-  position: relative;
-} */
-
 .subscribe-icon {
   margin-left: 16px;
   fill: #fff;
@@ -499,7 +495,8 @@ ol {
   z-index: 999;
   opacity: 0;
   pointer-events: none;
-  transition: opacity cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-open {
@@ -513,11 +510,12 @@ ol {
   background-color: #fcfcfc;
   border-radius: 4px;
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 72px 24px 24px 24px;
 }
 
@@ -533,10 +531,10 @@ ol {
 
 .close-btn {
   border-radius: 50%;
-  border: 1px;
-  border-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   width: 24px;
   height: 24px;
+  padding: 0;
   background-color: #e7e9fc;
   display: flex;
   justify-content: center;
@@ -546,13 +544,23 @@ ol {
   right: 24px;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn:hover,
 .close-btn:focus {
   background-color: #404bbf;
+  border: 1px solid #404bbf;
   fill: #ffffff;
+}
+
+.close-icon:hover,
+.close-icon:focus {
 }
 
 .modal-form {
@@ -565,6 +573,7 @@ ol {
   margin-bottom: 8px;
   position: relative;
 }
+
 .caption {
   font-size: 12px;
   line-height: 1.17;
@@ -572,11 +581,22 @@ ol {
   color: #8e8f99;
   margin-bottom: 4px;
 }
+
+.item-wrapper {
+  position: relative;
+}
+
 .form-field {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
+  width: 100%;
+  height: 40px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 8px 16px 8px 38px;
+  padding: 8px 16px;
+  padding-left: 38px;
+  outline: transparent;
+  background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field:hover,
@@ -593,8 +613,9 @@ ol {
 
 .form-icon {
   position: absolute;
-  bottom: 8px;
   left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -604,18 +625,25 @@ ol {
 
 textarea.form-field {
   display: block;
+  width: 100%;
   height: 120px;
   padding-left: 16px;
   margin-bottom: 16px;
   resize: none;
-}
-
-.caption::placeholder {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  outline: transparent;
 }
+
+/* .caption::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+} */
 
 .form-consent {
   margin-bottom: 24px;
@@ -645,20 +673,23 @@ textarea.form-field {
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   position: relative;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+  fill: transparent;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .consent-icon {
-  fill: #f4f4fd;
+  /* fill: #f4f4fd; */
 }
 
 .input-box:checked + label .consent-visible {
   background-color: #404bbf;
-  border-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
 }
 
 .form-link {
