@@ -496,9 +496,15 @@ ol {
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal {
@@ -509,6 +515,9 @@ ol {
   width: 408px;
   height: 584px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 72px 24px 24px 24px;
 }
 
@@ -519,10 +528,34 @@ ol {
   text-align: center;
   color: #2e2f42;
   margin-bottom: 16px;
+  overflow: auto;
+}
+
+.close-btn {
+  border-radius: 50%;
+  border: 1px;
+  border-color: rgba(0, 0, 0, 0.1);
+  width: 24px;
+  height: 24px;
+  background-color: #e7e9fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  background-color: #404bbf;
+  fill: #ffffff;
 }
 
 .modal-form {
-  /* gap: 8px; */
 }
 
 .form-item {
@@ -546,7 +579,7 @@ ol {
   padding: 8px 16px 8px 38px;
 }
 
-.acctive .form-field:hover,
+.form-field:hover,
 .form-field:focus,
 .acctive {
   border-color: #4d5ae5;
@@ -557,15 +590,6 @@ ol {
 .acctive {
   fill: #4d5ae5;
 }
-
-/* .stick {
-  border: 1.25px solid #2e2f42;
-  width: 18px;
-  height: 0px;
-  transform: rotate(-90deg);
-  border-radius: 1px;
-  position: absolute;
-} */
 
 .form-icon {
   position: absolute;
@@ -599,10 +623,6 @@ textarea.form-field {
 }
 
 .input-box {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
 }
 
 .consent-caption {
@@ -618,7 +638,7 @@ textarea.form-field {
 }
 
 .consent-visible {
-  display: inline-block;
+  display: inline-flex;
   width: 16px;
   height: 16px;
   /* margin-right: 8px; */
@@ -636,7 +656,7 @@ textarea.form-field {
   fill: #f4f4fd;
 }
 
-.input-box:checked + .consent-visible {
+.input-box:checked + label .consent-visible {
   background-color: #404bbf;
   border-color: #404bbf;
 }
@@ -646,7 +666,4 @@ textarea.form-field {
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: #4d5ae5;
-}
-
-.form-btn {
 }
