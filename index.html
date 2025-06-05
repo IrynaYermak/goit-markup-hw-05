@@ -495,23 +495,63 @@
       <div class="modal">
         <p class="modal-title">Leave your contacts and we will call you back</p>
 
-        <label for="modal-name">Name</label>
-        <input type="text" id="modal-name" />
+        <form class="modal-form">
+          <div class="form-item">
+            <label for="name" class="caption">Name</label>
+            <input type="text" id="name" class="form-field acctive" />
+            <svg class="form-icon acctive" width="18" height="18">
+              <use href="./images/icons.svg#icon-person"></use>
+            </svg>
+            <span class="stick"></span>
+          </div>
 
-        <label for=""></label>
-        <input type="text" />
+          <div class="form-item">
+            <label for="phone" class="caption">Phone</label>
+            <input type="tel" id="phone" class="form-field" />
+            <svg class="form-icon" width="18" height="24">
+              <use href="./images/icons.svg#icon-phone"></use>
+            </svg>
+          </div>
 
-        <label for=""></label>
-        <input type="text" />
+          <div class="form-item">
+            <label for="mail" class="caption">Email</label>
+            <input type="email" id="mail" class="form-field" />
+            <svg class="form-icon" width="18" height="24">
+              <use href="./images/icons.svg#icon-email"></use>
+            </svg>
+          </div>
 
-        <label for=""></label>
-        <textarea name="" id=""></textarea>
+          <div class="form-item">
+            <label for="comment" class="caption">Comment</label>
+            <textarea
+              name="comment"
+              id="comment"
+              placeholder="Text input"
+              class="form-field"
+            ></textarea>
+          </div>
 
-        <input type="checkbox" name="" id="" />
-        <span></span>
-        <label for=""></label>
+          <div class="form-consent">
+            <label for="consent" class="consent-caption">
+              <input
+                type="checkbox"
+                name="consent"
+                id="consent"
+                value="agree"
+                class="input-box"
+              />
+              <span class="consent-visible">
+                <svg class="consent-icon" width="10" height="8">
+                  <use href="./images/icons.svg#icon-checked"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a href="./" class="form-link">Privacy Policy</a>
+            </label>
+          </div>
 
-        <button type="submit"></button>
+          <button type="submit" class="form-btn">Send</button>
+        </form>
       </div>
     </div>
   </body>

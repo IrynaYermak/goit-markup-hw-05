@@ -176,7 +176,8 @@ ol {
   max-width: 496px;
 }
 
-.main-btn {
+.main-btn,
+.form-btn {
   display: block;
   font-weight: 500;
   font-size: 16px;
@@ -199,7 +200,9 @@ ol {
 .main-btn:hover,
 .main-btn:focus,
 .subscribe-btn:hover,
-.subscribe-btn:focus {
+.subscribe-btn:focus,
+.form-btn:hover,
+.form-btn:focus {
   background-color: #404bbf;
 }
 
@@ -507,6 +510,143 @@ ol {
   height: 584px;
   position: absolute;
   padding: 72px 24px 24px 24px;
+}
+
+.modal-title {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+  margin-bottom: 16px;
+}
+
+.modal-form {
+  /* gap: 8px; */
+}
+
+.form-item {
   display: flex;
   flex-direction: column;
+  width: 360px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.caption {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  margin-bottom: 4px;
+}
+.form-field {
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 8px 16px 8px 38px;
+}
+
+.acctive .form-field:hover,
+.form-field:focus,
+.acctive {
+  border-color: #4d5ae5;
+}
+
+.form-field:hover + .form-icon,
+.form-field:focus + .form-icon,
+.acctive {
+  fill: #4d5ae5;
+}
+
+/* .stick {
+  border: 1.25px solid #2e2f42;
+  width: 18px;
+  height: 0px;
+  transform: rotate(-90deg);
+  border-radius: 1px;
+  position: absolute;
+} */
+
+.form-icon {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-item:focus-within .form-icon {
+  fill: #4d5ae5;
+}
+
+textarea.form-field {
+  display: block;
+  height: 120px;
+  padding-left: 16px;
+  margin-bottom: 16px;
+  resize: none;
+}
+
+.caption::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.form-consent {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.input-box {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.consent-caption {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 8px;
+}
+
+.consent-visible {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  /* margin-right: 8px; */
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.consent-icon {
+  fill: #f4f4fd;
+}
+
+.input-box:checked + .consent-visible {
+  background-color: #404bbf;
+  border-color: #404bbf;
+}
+
+.form-link {
+  line-height: 1.33;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #4d5ae5;
+}
+
+.form-btn {
 }
