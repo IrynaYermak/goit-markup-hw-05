@@ -490,7 +490,7 @@
       </div>
     </footer>
 
-    <div class="modal-backdrop">
+    <div class="modal-backdrop is-open">
       <div class="modal">
         <button type="button" class="close-btn">
           <svg class="close-icon" width="8" height="8">
@@ -504,8 +504,13 @@
           <div class="form-item">
             <label for="user-name" class="caption">Name</label>
             <div class="item-wrapper">
-              <input type="text" id="user-name" class="form-field acctive" />
-              <svg class="form-icon acctive" width="18" height="24">
+              <input
+                type="text"
+                id="user-name"
+                name="user-name"
+                class="form-field acctive"
+              />
+              <svg class="form-icon" width="18" height="24">
                 <use href="./images/icons.svg#icon-person"></use>
               </svg>
             </div>
@@ -514,7 +519,7 @@
           <div class="form-item">
             <label for="phone" class="caption">Phone</label>
             <div class="item-wrapper">
-              <input type="tel" id="phone" class="form-field" />
+              <input type="tel" id="phone" name="phone" class="form-field" />
               <svg class="form-icon" width="18" height="24">
                 <use href="./images/icons.svg#icon-phone"></use>
               </svg>
@@ -524,14 +529,14 @@
           <div class="form-item">
             <label for="mail" class="caption">Email</label>
             <div class="item-wrapper">
-              <input type="email" id="mail" class="form-field" />
+              <input type="email" id="mail" name="mail" class="form-field" />
               <svg class="form-icon" width="18" height="24">
                 <use href="./images/icons.svg#icon-email"></use>
               </svg>
             </div>
           </div>
 
-          <div class="form-item">
+          <div class="form-item wrapper-textarea">
             <label for="user-comment" class="caption">Comment</label>
             <textarea
               name="user-comment"
