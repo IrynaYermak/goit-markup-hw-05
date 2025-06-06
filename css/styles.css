@@ -653,6 +653,8 @@ textarea.form-field {
 .form-consent {
   margin-bottom: 24px;
   position: relative;
+  display: flex;
+  gap: 8px;
 }
 
 .input-box {
@@ -664,10 +666,6 @@ textarea.form-field {
   letter-spacing: 0.04em;
   color: #8e8f99;
   cursor: pointer;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 8px;
 }
 
 .consent-visible {
